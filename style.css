@@ -26,7 +26,7 @@ nav {
   position: sticky;
   top: 0;
   padding: 0.5rem;
-  height: 20px;
+  min-height: 20px;
   background-color: var(--navBg);
   color: white;
   filter: var(--dropShadow);
