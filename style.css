@@ -1,32 +1,33 @@
-:root{
-    --heading: 5rem;
-    --subtext: 2rem;
-    --height: 25%;
-    --padding: 5%;
-    --headingColor: black;
-    --subColor: black;
+:root {
+  --heading: 5rem;
+  --subtext: 2rem;
+  --height: 25%;
+  --padding: 5%;
+  --headingColor: black;
+  --subColor: black;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
-    font-size: var(--heading);
-    color: var(--headingColor);
-    margin: 0.2rem 0;
+  font-size: var(--heading);
+  color: var(--headingColor);
+  margin: 0.2rem 0;
 }
 
 .subtext {
-    font-size: var(--subtext);
-    color: var(--subColor);
-    opacity: 0.95;
-    font-style: italic;
-    margin: 0 2rem;
+  font-size: var(--subtext);
+  color: var(--subColor);
+  opacity: 0.95;
+  font-style: italic;
+  margin: 0 2rem;
 }
 
 .card {
-    padding: var(--padding);
-    min-height: var(--height);
+  padding: var(--padding);
+  min-height: var(--height);
 }
