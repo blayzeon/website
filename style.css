@@ -1,10 +1,12 @@
 :root {
-  --heading: 5rem;
+  --heading: 4rem;
   --subtext: 2rem;
   --height: 25%;
-  --padding: 5%;
+  --padding: 5% 0;
   --headingColor: black;
   --subColor: black;
+  --navBg: black;
+  --navColor: white;
 }
 
 html,
@@ -13,21 +15,49 @@ body {
   padding: 0;
 }
 
+nav {
+  padding: 0.5rem;
+  height: 20px;
+  background-color: var(--navBg);
+  color: white;
+}
+
+nav > a {
+  all: unset;
+  text-transform: capitalize;
+  color: var(--navColor);
+  cursor: pointer;
+}
+
+nav > a:hover {
+  text-decoration: underline;
+}
+
 h2 {
   font-size: var(--heading);
   color: var(--headingColor);
-  margin: 0.2rem 0;
+  margin: 0.75rem;
 }
 
 .subtext {
   font-size: var(--subtext);
   color: var(--subColor);
-  opacity: 0.95;
+  opacity: 0.85;
   font-style: italic;
-  margin: 0 2rem;
+  margin: 0;
+  text-align: center;
+  background-color: white;
 }
 
 .card {
+  background-size: 100%;
+}
+
+.scrim {
   padding: var(--padding);
   min-height: var(--height);
+  display: relative;
+  background-color: hsla(203, 80%, 84%, 0.486);
+  height: 100%;
+  width: 100%;
 }
