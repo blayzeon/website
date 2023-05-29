@@ -78,8 +78,12 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--padding);
   display: relative;
   width: 100%;
   box-shadow: inset 0 0 2rem #000000;
+}
+
+.insert > * {
+  height: 20rem;
+  width: 100%;
 }

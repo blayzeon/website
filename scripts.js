@@ -2,9 +2,10 @@ const defaultSetting = {
   parent: "container",
   img: false,
   caption: false,
-  text: "This is default subtext",
+  text: false,
   subStyle: "subtext",
   id: false,
+  insert: false,
 };
 
 const settings = [
@@ -35,6 +36,9 @@ const settings = [
     text: "Sign up now.",
     img: "https://cdn.pixabay.com/photo/2012/03/04/00/11/arid-21799_1280.jpg",
     id: "order",
+  },
+  {
+    insert: `<iframe src="https://www.google.com/maps/d/embed?mid=1gQgFXIr0JG9dqoblu1r1zkI9IHQ&hl=en&ehbc=2E312F"></iframe>`,
   },
 ];
 const elms = {
@@ -85,9 +89,17 @@ const elms = {
       caption.innerText = obj.caption;
       scrim.appendChild(caption);
     }
+
     if (obj.text) {
       text.innerText = obj.text;
       scrim.appendChild(text);
+    }
+
+    if (obj.insert) {
+      const insert = document.createElement("div");
+      insert.classList.add("insert");
+      insert.innerHTML = obj.insert;
+      scrim.appendChild(insert);
     }
 
     parent.appendChild(elm);
