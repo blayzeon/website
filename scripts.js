@@ -1,18 +1,41 @@
 const defaultSetting = {
   parent: "container",
-  img: "https://images.pexels.com/photos/15985573/pexels-photo-15985573/free-photo-of-wood-landscape-water-summer.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  caption: "Test",
-  text: "Subtext for the text.",
+  img: false,
+  caption: false,
+  text: "This is default subtext",
+  subStyle: "subtext",
   id: false,
 };
 
 const settings = [
   {
     caption: "Company Name",
-    text: "Here is a small blurb about the company",
+    text: "Here is a small blurb about the company.",
+    img: "https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_1280.jpg",
     id: "home",
   },
-  { ...defaultSetting },
+  {
+    caption: "Product #1",
+    text: "Whatever this is, you need it.",
+    img: "https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg",
+    id: "products",
+  },
+  {
+    caption: "Product #2",
+    text: "Whatever this is, you need it.",
+    img: "https://cdn.pixabay.com/photo/2016/12/16/15/25/christmas-1911637_1280.jpg",
+  },
+  {
+    caption: "Product #3",
+    text: "Whatever this is, you need it.",
+    img: "https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg",
+  },
+  {
+    caption: "Call to Action",
+    text: "Sign up now.",
+    img: "https://cdn.pixabay.com/photo/2012/03/04/00/11/arid-21799_1280.jpg",
+    id: "order",
+  },
 ];
 const elms = {
   navItems: [],
@@ -42,22 +65,33 @@ const elms = {
     scrim.classList.add("scrim");
     elm.classList.add("card");
     caption.classList.add("title");
-    text.classList.add("subtext");
+
+    if (obj.subStyle) {
+      text.classList.add(obj.subStyle);
+    }
 
     /* modifications */
     if (obj.id) {
       elm.setAttribute("id", obj.id);
     }
 
-    elm.style.backgroundImage = `url(${obj.img})`;
-    caption.innerText = obj.caption;
-    text.innerText = obj.text;
+    if (obj.img) {
+      elm.style.backgroundImage = `url(${obj.img})`;
+    } else {
+      elm.style.backgroundColor = "var(--bgc)";
+    }
 
-    /* add & return */
+    if (obj.caption) {
+      caption.innerText = obj.caption;
+      scrim.appendChild(caption);
+    }
+    if (obj.text) {
+      text.innerText = obj.text;
+      scrim.appendChild(text);
+    }
+
     parent.appendChild(elm);
     elm.appendChild(scrim);
-    scrim.appendChild(caption);
-    scrim.appendChild(text);
 
     return elm;
   },
