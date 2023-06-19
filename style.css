@@ -1,89 +1,118 @@
 :root {
-  --heading: 2.5rem;
-  --subtext: 1.5rem;
-  --height: 15rem;
-  --padding: 5% 0;
-  --headingColor: white;
-  --subColor: black;
-  --subBg: white;
-  --navBg: black;
-  --navColor: white;
-  --dropShadow: drop-shadow(0 0 0.75rem black);
   --bgc: black;
+  --font: white;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-nav {
-  display: flex;
-  gap: 1rem;
-  position: sticky;
-  top: 0;
-  padding: 0.5rem;
-  min-height: 20px;
-  background-color: var(--navBg);
-  color: white;
-  filter: var(--dropShadow);
+html,
+body,
+.container {
+  height: 100%;
 }
 
-nav > a {
-  all: unset;
-  padding: 0 0.2rem;
-  text-transform: capitalize;
-  color: var(--navColor);
-  cursor: pointer;
+body {
+  background-color: var(--bgc);
 }
 
-nav > a:hover,
-nav > a:focus {
-  background-color: var(--navColor);
-  color: var(--navBg);
-}
-
+h1,
 h2 {
-  font-size: var(--heading);
-  color: var(--headingColor);
-  margin: 0.75rem;
-  text-shadow: 1px 1px #000000;
-  user-select: none;
-  cursor: default;
-}
-
-.subtext {
-  font-size: var(--subtext);
-  color: var(--subColor);
-  padding: 0.2rem 0;
   margin: 0;
-  text-align: center;
-  background-color: var(--subBg);
+  padding: 0;
 }
 
-.card,
-.scrim {
-  min-height: var(--height);
+main > section {
+  padding: 1rem;
 }
 
-.card {
-  background-size: 100%;
-  outline: 0.1rem solid black;
+article {
+  border-radius: 0.2rem;
 }
 
-.scrim {
+form,
+article,
+header {
+  padding: 0.5rem;
+  background-color: #fff;
+}
+
+article {
+  margin-bottom: 0.5rem;
+}
+
+form > button {
+  background-color: var(--bgc);
+  color: var(--font);
+  border: none;
+  padding: 0.3rem 1.5rem;
+}
+
+form > button:hover,
+form > button:focus {
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+form > div {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  display: relative;
-  width: 100%;
-  box-shadow: inset 0 0 2rem #000000;
+  gap: 0.2rem;
+  margin-bottom: 0.75rem;
 }
 
-.insert > * {
-  height: 20rem;
-  width: 100%;
+form > div > input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+form > div > textarea {
+  resize: none;
+}
+
+#brand-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: calc(10rem + 15vw);
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.29854368932038833) 50%,
+      rgba(255, 255, 255, 0) 72%
+    ),
+    url("\IMG_3249.JPG");
+  background-position: center;
+  background-size: cover;
+  background-color: var(--bg);
+}
+
+#brand-container > div {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.2rem 1rem;
+  color: var(--font);
+}
+
+#main-content {
+  margin: 0 5vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-space {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
 }
