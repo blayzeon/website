@@ -90,7 +90,7 @@ form > div > textarea {
       rgba(0, 0, 0, 0.29854368932038833) 50%,
       rgba(255, 255, 255, 0) 72%
     ),
-    url("\IMG_3249.JPG");
+    url("img/headerimg.JPG");
   background-position: center;
   background-size: cover;
   background-color: var(--bg);
