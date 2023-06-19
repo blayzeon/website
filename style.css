@@ -45,6 +45,10 @@ header {
   background-color: #fff;
 }
 
+header {
+  font-size: large;
+}
+
 article {
   margin-bottom: 0.5rem;
 }
@@ -57,7 +61,7 @@ form > button {
 }
 
 form > button:hover,
-form > button:focus {
+#nav-menu:hover {
   cursor: pointer;
   opacity: 0.85;
 }
@@ -104,6 +108,13 @@ form > div > textarea {
 
 #main-content {
   margin: 0 5vw;
+}
+
+#nav-menu {
+  text-align: center;
+  font-family: monospace;
+  user-select: none;
+  border: none;
 }
 
 .container {
