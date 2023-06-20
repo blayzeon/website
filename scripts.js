@@ -19,17 +19,36 @@ function deactivate(elm) {
   elm.lastElementChild.classList.add("display-none");
 }
 
-window.addEventListener("click", (e) => {
+function isSet(e) {
   const active = document.querySelector(".active");
   const parent = e.target.parentNode;
   if (parent.classList.contains("set")) {
-    return;
+    return true;
   } else {
     if (active) {
       deactivate(active);
     }
 
     return;
+  }
+}
+
+// mouse compatibility
+window.addEventListener("click", (e) => {
+  isSet(e);
+});
+
+// touch compatibility
+window.addEventListener("ontouchstart", (e) => {
+  isSet(e);
+});
+
+// keyboard support
+window.addEventListener("keydown", (e) => {
+  if (e.keyCode === 27) {
+    //Esc key was pressed
+    const active = document.querySelector(".active");
+    deactivate(active);
   }
 });
 
