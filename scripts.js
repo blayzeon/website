@@ -14,57 +14,75 @@ h2s.forEach((header) => {
 });
 
 // functionality for show/hide buttons
-function deactivate(elm) {
-  elm.classList.remove("active");
-  elm.lastElementChild.classList.add("display-none");
-}
-
-function isSet(e) {
-  const active = document.querySelector(".active");
-  const parent = e.target.parentNode;
-  if (parent.classList.contains("set")) {
-    return true;
-  } else {
-    if (active) {
-      deactivate(active);
-    }
-
+function deactivate(queryElm) {
+  const elm = queryElm ? queryElm : document.querySelector(".active");
+  if (!elm) {
     return;
   }
+  elm.classList.remove("active");
+  elm.classList.add("display-none");
 }
+
+function activate(queryElm) {
+  const elm = queryElm ? queryElm : document.querySelector(".active");
+  if (!elm) {
+    return;
+  }
+  elm.classList.add("active");
+  elm.classList.remove("display-none");
+}
+
+const showHideDivs = document.querySelectorAll("[data='info-set']");
+showHideDivs.forEach((div) => {
+  div.addEventListener("click", (e) => {
+    const clicked = e.target;
+    const parent = clicked.parentNode;
+    const sets = document.querySelectorAll(".set");
+
+    sets.forEach((set) => {
+      const toggleElm = set.lastElementChild;
+
+      // hide the elm if the button is pressed more than once
+      if (toggleElm.classList.contains("active")) {
+        if (clicked.classList.contains("toggle-button")) {
+          deactivate(toggleElm);
+          return;
+        }
+      }
+
+      // show the element when clicked
+      if (set === parent) {
+        activate(toggleElm);
+        return;
+      }
+    });
+  });
+});
+
+// hide the elm if the user clicks something unrelated
 
 // mouse compatibility
 window.addEventListener("click", (e) => {
-  isSet(e);
+  if (e.target.parentNode.classList.contains("set")) {
+    return;
+  } else {
+    deactivate();
+  }
 });
 
 // touch compatibility
 window.addEventListener("ontouchstart", (e) => {
-  isSet(e);
+  if (e.target.parentNode.classList.contains("set")) {
+    return;
+  } else {
+    deactivate();
+  }
 });
 
 // keyboard support
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
     //Esc key was pressed
-    const active = document.querySelector(".active");
-    deactivate(active);
+    deactivate();
   }
-});
-
-const showHideDivs = document.querySelectorAll("[data='info-set']");
-showHideDivs.forEach((div) => {
-  div.addEventListener("click", (e) => {
-    const parent = e.target.parentNode;
-
-    const sets = document.querySelectorAll(".set");
-    sets.forEach((set) => {
-      deactivate(set);
-      if (set === parent) {
-        set.classList.add("active");
-        set.lastElementChild.classList.remove("display-none");
-        return;
-      }
-    });
-  });
 });

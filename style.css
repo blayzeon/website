@@ -150,19 +150,20 @@ form > div > textarea {
   align-items: center;
   text-align: center;
   padding: 1rem;
+  min-width: 8rem;
 }
 
 .set > button {
   font-size: medium;
   padding: 0.4rem;
-  width: 100%;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
 .active {
-  background-color: rgba(0, 0, 0, 0.1);
   border: 1px dashed black;
+  width: 100%;
 }
 
 .sticky {
