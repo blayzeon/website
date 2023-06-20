@@ -9,76 +9,177 @@
   </head>
   <body>
     <div class="container">
-      <header>
+      <header class="sticky">
         <nav class="flex-space">
-          <span>❤ Company Name</span> <button id="nav-menu">Menu ☰</button>
+          <span>🐟 Kate's Fish Camp</span>
+          <div class="set" data="info-set">
+            <button id="nav-button" class="dark-button">Menu ☰</button>
+            <ul id="nav-menu" class="display-none"></ul>
+          </div>
         </nav>
       </header>
       <main>
         <section id="brand-container">
           <div>
-            <h1>Company Name</h1>
+            <h1>Kate's Fish Camp</h1>
             <p>
-              About us paragraph - Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Ab sint deserunt mollitia numquam eius sapiente
-              quos iusto hic. Id repudiandae quia pariatur consequuntur, maiores
-              sequi provident laboriosam explicabo iste dolore.
+              Located at the cross roads of SR 20, Prairie Creek and The
+              Gainesville Bike trail, Kates Fish Camp makes an ideal place for
+              outdoor adventures, canoeing, boating, camping, biking, bird
+              watching and more.
             </p>
           </div>
         </section>
         <section id="main-content">
           <article>
-            <h2>Amenities</h2>
+            <h2 id="amenitites">Amenities</h2>
             <p>
-              What is included / what we have to offer - Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Nemo eligendi veritatis amet
-              non incidunt enim deleniti inventore! Eveniet totam ipsa
-              consequuntur, perspiciatis quasi est, minima molestias a, sint
-              accusantium architecto.
+              Kate's Fish Camp is more than just a place to park your RV, it is
+              an exclusive campground completely surrounded by extraordinary
+              wilderness with many trails to explore. Our campground is directly
+              connected to the Gainesville-Hawthorne State Bike Trail and has
+              total access to Newnan's Lake. All of our sites are pull-through
+              sites, and each comes with electricity (20, 30, and 50 amp),
+              water, and Gigablast high-speed Wi-Fi.
+            </p>
+            <p>
+              <small>
+                <strong>Note:</strong> All campers must be self-contained, and
+                only RV camping is available, although we offer a guest restroom
+                and a shower for your use as Kate's Fish Camp does not offer
+                sewage hookups because of the surrounding land's recognized
+                natural, ecological and cultural values. There is a Love's
+                Travel Stops about 15 minutes away that offers RV septic
+                services.
+              </small>
             </p>
           </article>
           <article>
-            <h2>Pricing</h2>
+            <h2 id="pricing">Prices and Availabity</h2>
+            <p>RV, travel trailer, and pop-up Camping welcome</p>
+            <ul>
+              <li>
+                Class B Recreational Vehicles or Travel Trailers less than 25'
+                are $40.00
+              </li>
+              <li>
+                Class C Recreational Vehicles or Travel Trailers less than 30'
+                are $45.00
+              </li>
+              <li>
+                Class A Recreational Vehicles or Travel Trailers more than 30'
+                are $50.00
+              </li>
+              <li>
+                We only offer nightly rates. Campers/RVs can have up to four
+                adults; additional adults are $10 each
+              </li>
+            </ul>
             <p>
-              Products & Pricing - Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Neque repellat similique explicabo rerum
-              consequuntur fugiat placeat minus assumenda et libero atque,
-              aspernatur recusandae sequi quo illo, qui modi commodi voluptatem.
+              We allow stays of up to 2 weeks. To book your site, please give us
+              a call at (352) 372-1026 or use the contact form below.
+            </p>
+            <p>
+              All cancellations and rain checks must be made five workdays
+              before your reservation.
             </p>
           </article>
           <article>
-            <h2>FAQ</h2>
-            <p>
-              Frequently asked questions - Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Libero est autem sapiente nisi
-              consectetur, omnis deserunt cumque fuga dignissimos cupiditate
-              minus, quas earum error, explicabo architecto laudantium odio
-              aliquid quae.
-            </p>
+            <h2 id="faq">Frequently Asked Questions</h2>
+            <div id="faq-grid">
+              <div class="set" data="info-set">
+                <button class="dark-button">
+                  Where is the closest dump station available?
+                </button>
+                <div class="display-none">
+                  Loves Travel Stop is located about 15 minutes away and
+                  provides RV dump services.
+                </div>
+              </div>
+              <div class="set" data="info-set">
+                <button class="dark-button">
+                  Is there availabity? How do I book?
+                </button>
+                <div class="display-none">
+                  Please give us a call at (352) 372-1026 or use the
+                  <a href="#Contact">contact form</a> below!
+                </div>
+              </div>
+              <div class="set" data="info-set">
+                <button class="dark-button">
+                  Do you offer pull-through sites?
+                </button>
+                <div class="display-none">
+                  We do, all of our sites are pull-through plus we have a large
+                  area for turning around.
+                </div>
+              </div>
+              <div class="set" data="info-set">
+                <button class="dark-button">
+                  Do you sell bait/snacks/etc.?
+                </button>
+                <div class="display-none">
+                  We sell homemade artisanal soap at
+                  <a href="https://www.soapmakermonica.com/" target="_blank"
+                    >SoapMakerMonica.com</a
+                  >.
+                </div>
+              </div>
+              <div class="set" data="info-set">
+                <button class="dark-button">Do you offer boat rentals?</button>
+                <div class="display-none">
+                  Although we used to rent boats, canoes, and kayaks, now we are
+                  solely focused on providing an excellent experience for RV and
+                  travel trailer campers.
+                </div>
+              </div>
+              <div class="set" data="info-set">
+                <button class="dark-button">
+                  Do you offer tent camping/van parking?
+                </button>
+                <div class="display-none">
+                  We only offer spots for RVs, campers, and travel trailers at
+                  this time.
+                </div>
+              </div>
+              <!-- 
+                add more:
+                <div class="set" data="info-set">
+                <button class="dark-button">
+                  Click me for more information!
+                </button>
+                <div class="display-none">
+                  Here is the additional information!
+                </div>
+              </div>
+              -->
+            </div>
           </article>
           <article>
-            <h2>Contact</h2>
+            <h2 id="contact">Contact</h2>
             <p>
-              Form below will send an email to business owner - Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Perferendis debitis
-              deleniti eos voluptatem sunt quasi numquam commodi sapiente amet.
-              Consequuntur voluptatem ipsa alias. Repellat molestiae natus iure
-              ratione accusamus fugit.
+              This form is currently non-fuctioning but will send an email when
+              submitted once completed.
             </p>
             <form>
               <div>
                 <label for="">Name: </label>
-                <input type="text" name="" id="" />
+                <input type="text" name="" id="" placeholder="John Doe" />
               </div>
               <div>
                 <label for="">Phone or Email: </label>
-                <input type="text" name="" id="" />
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="john.doe@email.com"
+                />
               </div>
               <div>
                 <label for="">Message: </label>
                 <textarea name="" id="" cols="30" rows="10"></textarea>
               </div>
-              <button>Submit</button>
+              <button class="dark-button">Submit</button>
             </form>
           </article>
         </section>

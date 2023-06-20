@@ -1,5 +1,6 @@
 :root {
   --bgc: black;
+  --trans: hsla(0, 0%, 0%, 0.7);
   --font: white;
 }
 
@@ -26,7 +27,7 @@ body {
 
 h1,
 h2 {
-  margin: 0;
+  margin: 0 0 0.5rem 0;
   padding: 0;
 }
 
@@ -39,13 +40,16 @@ article {
 }
 
 form,
-article,
-header {
+article {
   padding: 0.5rem;
   background-color: #fff;
+  color: black;
 }
 
 header {
+  background-color: var(--trans);
+  color: var(--font);
+  padding: 0.5rem;
   font-size: large;
 }
 
@@ -53,7 +57,8 @@ article {
   margin-bottom: 0.5rem;
 }
 
-form > button {
+form > button,
+.dark-button {
   background-color: var(--bgc);
   color: var(--font);
   border: none;
@@ -61,7 +66,7 @@ form > button {
 }
 
 form > button:hover,
-#nav-menu:hover {
+.dark-button:hover {
   cursor: pointer;
   opacity: 0.85;
 }
@@ -97,7 +102,7 @@ form > div > textarea {
     url("img/headerimg.JPG");
   background-position: center;
   background-size: cover;
-  background-color: var(--bg);
+  background-color: var(--bgc);
 }
 
 #brand-container > div {
@@ -110,11 +115,60 @@ form > div > textarea {
   margin: 0 5vw;
 }
 
+#nav-menu,
+#nav-button {
+  width: 10rem;
+}
+
 #nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0 0.5rem 0;
+  list-style-type: none;
+  position: absolute;
+  top: 40px;
+  z-index: 2;
+  background-color: var(--bgc);
+  color: var(--font);
+}
+
+#nav-menu a {
+  color: var(--font);
+}
+
+#faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.set {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  font-family: monospace;
-  user-select: none;
+  padding: 1rem;
+}
+
+.set > button {
+  font-size: medium;
+  padding: 0.4rem;
+  width: 100%;
   border: none;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px dashed black;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .container {
@@ -122,8 +176,23 @@ form > div > textarea {
   flex-direction: column;
 }
 
+.flex {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.flex-even {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .flex-space {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 1.5rem;
+}
+
+.display-none {
+  display: none !important;
 }
