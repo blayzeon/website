@@ -139,7 +139,7 @@ form > div > textarea {
 
 #faq-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 
@@ -196,4 +196,16 @@ form > div > textarea {
 
 .display-none {
   display: none !important;
+}
+
+@media only screen and (min-width: 500px) {
+  #faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #faq-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
