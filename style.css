@@ -209,3 +209,9 @@ form > div > textarea {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media only screen and (min-width: 2000px) {
+  #faq-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
