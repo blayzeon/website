@@ -70,15 +70,6 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// touch compatibility
-window.addEventListener("touchstart", (e) => {
-  if (e.target.parentNode.classList.contains("set")) {
-    return;
-  } else {
-    deactivate();
-  }
-});
-
 // keyboard support
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
