@@ -87,6 +87,18 @@ form > div > textarea {
   resize: none;
 }
 
+#footer {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+  background-color: var(--bgc);
+  color: var(--font);
+  padding-bottom: 1rem;
+}
+
 #brand-container {
   display: flex;
   align-items: center;
