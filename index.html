@@ -202,25 +202,63 @@
               This form is currently non-fuctioning but will send an email when
               submitted once completed.
             </p>
-            <form>
+            <form action="contactform.php" method="post">
               <div>
-                <label for="">Name: </label>
-                <input type="text" name="" id="" placeholder="John Doe" />
-              </div>
-              <div>
-                <label for="">Phone or Email: </label>
+                <label for="form-name">Name: </label>
                 <input
                   type="text"
-                  name=""
-                  id=""
-                  placeholder="john.doe@email.com"
+                  name="name"
+                  id="form-name"
+                  placeholder="John Doe"
                 />
               </div>
               <div>
-                <label for="">Message: </label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <label for="form-email">Email: </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="form-email"
+                  placeholder="john.doe@email.com"
+                  required
+                />
               </div>
-              <button class="dark-button">Submit</button>
+              <div>
+                <label for="form-phone">Phone: </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="form-phone"
+                  placeholder="352-555-1234"
+                />
+              </div>
+              <div class="flex">
+                <label for="form-date1">Date: </label
+                ><input type="date" id="form-date1" />-<label
+                  for="form-date2"
+                ></label
+                ><input type="date" id="form-date2" />
+              </div>
+              <div>
+                <label for="form-size">Unit Size: </label>
+                <select name="size" id="form-size">
+                  <option value="" selected disabled hidden></option>
+                  <option value="~25">Up to 25'</option>
+                  <option value="26-29">Between 26' and 29'</option>
+                  <option value="30+">30' or larger</option>
+                </select>
+              </div>
+              <div>
+                <label for="form-msg">Message: </label>
+                <textarea
+                  name="message"
+                  id="form-message"
+                  cols="30"
+                  rows="10"
+                  required
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <button class="dark-button">Send</button>
             </form>
           </article>
         </section>

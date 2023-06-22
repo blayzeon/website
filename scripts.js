@@ -77,3 +77,18 @@ window.addEventListener("keydown", (e) => {
     deactivate();
   }
 });
+
+/* default form date
+function returnDate(addDays) {
+  let days = addDays ? addDays : 0;
+  isNaN(days) ? 0 : days;
+  let date = new Date();
+  if (days > 0) {
+    date.setDate(date.getDate() + addDays);
+  }
+  return date;
+}
+
+document.getElementById("form-date1").valueAsDate = returnDate();
+document.getElementById("form-date2").valueAsDate = returnDate(1);
+*/
