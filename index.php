@@ -202,7 +202,7 @@
               This form is currently non-fuctioning but will send an email when
               submitted once completed.
             </p>
-            <form action="contactform.php" method="post">
+            <form action="contactform.php" name="contact" method="post">
               <div>
                 <label for="form-name">Name: </label>
                 <input
@@ -233,10 +233,10 @@
               </div>
               <div class="flex">
                 <label for="form-date1">Date: </label
-                ><input type="date" id="form-date1" />-<label
+                ><input type="date" id="form-date1" name="date1" />-<label
                   for="form-date2"
                 ></label
-                ><input type="date" id="form-date2" />
+                ><input type="date" name="date2" id="form-date2" />
               </div>
               <div>
                 <label for="form-size">Unit Size: </label>
@@ -258,7 +258,7 @@
                   placeholder="Your message"
                 ></textarea>
               </div>
-              <button class="dark-button">Send</button>
+              <button class="dark-button" name="submit">Send</button>
             </form>
           </article>
         </section>
