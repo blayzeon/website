@@ -1,81 +1,74 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
-const multiparty = require("multiparty");
-const USER = KFC_USER;
-const PASSWORD = KFC_PASSWORD;
 const path = require("path");
+const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-// instantiate an express app
+const USER = process.env.USER_ID;
+const PASS = process.env.USER_KEY;
+const HOST = process.env.USER_HOST;
+
 const app = express();
-app.use(express.static("public"));
 
-//make the contact page the the first page on the app
-app.route("/").get(function (req, res) {
-  res.sendFile(process.cwd() + "/public/index.html");
-});
+// body parser middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false })); // this is to handle URL encoded data
+// end parser middleware
 
-//port will be 8000 for testing
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}...`);
-});
+// custom middleware to log data access
+const log = function (request, response, next) {
+  console.log(
+    `${new Date()}: ${request.protocol}://${request.get("host")}${
+      request.originalUrl
+    }`
+  );
+  console.log(request.body); // make sure JSON middleware is loaded first
+  next();
+};
+app.use(log);
+// end custom middleware
 
-const transporter = nodemailer.createTransport({
-  // IMAP: 993
-  // oSMTP: 465
-  host: "mail.katesfishcamp.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: USER,
-    pass: PASSWORD,
-  },
-});
+// enable static files pointing to the folder "public"
+// this can be used to serve the index.html file
+app.use(express.static(path.join(__dirname, "public"))); // app.use(express.static("public"));
 
-// verify connection configuration
-transporter.verify(function (error, success) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Server is ready to take our messages");
-  }
-});
+// HTTP POST
+app.post("/send", function (request, response) {
+  // create reusable transporter object using the default SMTP transport
+  const transporter = nodemailer.createTransport({
+    host: HOST,
+    port: 465,
+    secure: true,
+    auth: {
+      user: USER,
+      pass: PASS,
+    },
+  });
 
-// POST route
-app.post("/send", (req, res) => {
-  //1. Accepts the form data submitted and parse it using multiparty.
-  let form = new multiparty.Form();
-  let data = {};
-  form.parse(req, function (err, fields) {
-    console.log(fields);
-    Object.keys(fields).forEach(function (property) {
-      data[property] = fields[property].toString();
-    });
+  var textBody = `FROM: ${request.body.name} EMAIL: ${request.body.email} MESSAGE: ${request.body.message}`;
+  var htmlBody = `<h2>Mail From Contact Form</h2><p>from: ${request.body.name} <a href="mailto:${request.body.email}">${request.body.email}</a></p><p>${request.body.message}</p>`;
+  var mail = {
+    from: USER, // sender address
+    to: USER, // list of receivers (THIS COULD BE A DIFFERENT ADDRESS or ADDRESSES SEPARATED BY COMMAS)
+    subject: "Mail From Contact Form", // Subject line
+    text: textBody,
+    html: htmlBody,
+  };
 
-    //2. After parsing it, create a mail object with from, to, subject and text properties.
-    /* const mail = {
-      from: data.name,
-      to: process.env.EMAIL,
-      subject: data.subject,
-      text: `${data.name} <${data.email}> \n${data.message}`,
-    };*/
-
-    const mail = {
-      from: USER, // can only be send from the server
-      to: USER,
-      subject: "Camping Inquiry",
-      text: data.email,
-    };
-
-    //3. Use transporter.sendMail() to send the email and done.
-    transporter.sendMail(mail, (err, data) => {
-      if (err) {
-        console.log(err);
-        res.status(500).send("Something went wrong.");
-      } else {
-        res.status(200).send("Email successfully sent to recipient!");
-      }
-    });
+  // send mail with defined transport object
+  transporter.sendMail(mail, function (err, info) {
+    if (err) {
+      console.log(err);
+      response.json({
+        message:
+          "message not sent: an error occured; check the server's console log",
+      });
+    } else {
+      response.json({ message: `message sent: ${info.messageId}` });
+    }
   });
 });
+
+// set port from environment variable, or 8000
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => console.log(`listening on port ${PORT}`));

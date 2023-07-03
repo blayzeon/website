@@ -78,40 +78,26 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-/* default form date
-function returnDate(addDays) {
-  let days = addDays ? addDays : 0;
-  isNaN(days) ? 0 : days;
-  let date = new Date();
-  if (days > 0) {
-    date.setDate(date.getDate() + addDays);
-  }
-  return date;
+function submitEmailForm(form) {
+  var obj = new XMLHttpRequest();
+  obj.onreadystatechange = function () {
+    if (obj.readyState == 4) {
+      if (obj.status == 200) {
+        var res = JSON.parse(obj.responseText);
+        console.log(res.message);
+      } else {
+        console.log("XMLHttp status " + obj.status + ": " + obj.statusText);
+      }
+    }
+  };
+  obj.open("post", form.action, true);
+  obj.setRequestHeader("Content-Type", "application/json"); // NOTICE: "application/json"
+  obj.send(
+    JSON.stringify({
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    })
+  );
+  return false;
 }
-
-document.getElementById("form-date1").valueAsDate = returnDate();
-document.getElementById("form-date2").valueAsDate = returnDate(1);
-*/
-
-// contact form
-//get the form by its id
-const form = document.getElementById("contact-form");
-
-const formEvent = form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  // form validation
-  let mail = new FormData(form);
-  console.log(mail);
-
-  // sendMail(mail);
-});
-
-const sendMail = (mail) => {
-  fetch("/send", {
-    method: "post",
-    body: mail,
-  }).then((response) => {
-    return response.json();
-  });
-};
