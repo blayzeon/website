@@ -204,48 +204,50 @@
             </p>
             <form
               id="contact-form"
-              action="send"
+              action="/send"
               method="POST"
+              onsubmit="return submitEmailForm(this);"
               enctype="multipart/form-data"
             >
               <div>
-                <label for="form-name">Name: </label>
+                <label for="name">Name: </label>
                 <input
                   type="text"
                   name="name"
-                  id="form-name"
+                  id="name"
                   placeholder="John Doe"
+                  required
                 />
               </div>
               <div>
-                <label for="form-email">Email: </label>
+                <label for="email">Email: </label>
                 <input
                   type="email"
                   name="email"
-                  id="form-email"
+                  id="email"
                   placeholder="john.doe@email.com"
                   required
                 />
               </div>
               <div>
-                <label for="form-phone">Phone: </label>
+                <label for="phone">Phone: </label>
                 <input
                   type="tel"
                   name="phone"
-                  id="form-phone"
+                  id="phone"
                   placeholder="352-555-1234"
                 />
               </div>
               <div class="flex">
-                <label for="form-date1">Date: </label
-                ><input type="date" id="form-date1" name="date1" />-<label
-                  for="form-date2"
+                <label for="date1">Date: </label
+                ><input type="date" id="date1" name="date1" />-<label
+                  for="date2"
                 ></label
-                ><input type="date" name="date2" id="form-date2" />
+                ><input type="date" name="date2" id="date2" />
               </div>
               <div>
-                <label for="form-size">Unit Size/Class: </label>
-                <select name="size" id="form-size">
+                <label for="size">Unit Size/Class: </label>
+                <select name="size" id="size">
                   <option value="" selected disabled hidden></option>
                   <option value="B">Up to 25' (B)</option>
                   <option value="C">Between 26' and 29' (C)</option>
@@ -253,10 +255,10 @@
                 </select>
               </div>
               <div>
-                <label for="form-msg">Message: </label>
+                <label for="msg">Message: </label>
                 <textarea
                   name="message"
-                  id="form-message"
+                  id="message"
                   cols="30"
                   rows="10"
                   required
