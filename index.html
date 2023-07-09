@@ -219,6 +219,17 @@
                   required
                 />
               </div>
+              <div class="form-field visually-hidden">
+                <label for="username" class="disabled">Display Name: </label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="John1234"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
               <div class="form-field">
                 <label for="email" class="required">Email: </label>
                 <input
@@ -247,7 +258,7 @@
               </div>
               <div class="form-field">
                 <label for="size">Unit Size/Class: </label>
-                <select name="size" id="size">
+                <select name="unit" id="size">
                   <option value="" selected disabled hidden></option>
                   <option value="B">Up to 25' (B)</option>
                   <option value="C">Between 26' and 29' (C)</option>
