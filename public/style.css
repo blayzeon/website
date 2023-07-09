@@ -35,7 +35,10 @@ main > section {
   padding: 1rem;
 }
 
-article {
+article,
+iframe,
+button,
+.trans-bg {
   border-radius: 0.2rem;
 }
 
@@ -121,7 +124,7 @@ form > div > textarea {
   background-color: var(--bgc);
 }
 
-#brand-container > div {
+.trans-bg {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0.2rem 1rem;
   color: var(--font);
