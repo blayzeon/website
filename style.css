@@ -38,7 +38,8 @@ main > section {
 article,
 iframe,
 button,
-.trans-bg {
+.trans-bg,
+.form-field {
   border-radius: 0.2rem;
 }
 
@@ -74,11 +75,17 @@ form > button:hover,
   opacity: 0.85;
 }
 
-form > div {
+.required:before {
+  content: " *";
+  color: red;
+}
+
+.form-field {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  margin-bottom: 0.75rem;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.1rem;
 }
 
 form > div > input {
