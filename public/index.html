@@ -197,10 +197,10 @@
             </div>
           </article>
           <article>
-            <h2 id="contact">Contact</h2>
+            <h2 id="contact">Contact Form</h2>
             <p>
-              This form is currently non-fuctioning but will send an email when
-              submitted once completed.
+              If you have any questions, please give us a call at
+              <a href="tel">(352) 372-1026</a> or use the contact form below.
             </p>
             <form
               id="contact-form"
@@ -209,8 +209,8 @@
               onsubmit="return submitEmailForm(this);"
               enctype="multipart/form-data"
             >
-              <div>
-                <label for="name">Name: </label>
+              <div class="form-field">
+                <label for="name" class="required">Name: </label>
                 <input
                   type="text"
                   name="name"
@@ -219,8 +219,8 @@
                   required
                 />
               </div>
-              <div>
-                <label for="email">Email: </label>
+              <div class="form-field">
+                <label for="email" class="required">Email: </label>
                 <input
                   type="email"
                   name="email"
@@ -229,7 +229,7 @@
                   required
                 />
               </div>
-              <div>
+              <div class="form-field">
                 <label for="phone">Phone: </label>
                 <input
                   type="tel"
@@ -238,14 +238,14 @@
                   placeholder="352-555-1234"
                 />
               </div>
-              <div class="flex">
+              <div class="flex form-field">
                 <label for="date1">Date: </label
                 ><input type="date" id="date1" name="date1" />-<label
                   for="date2"
                 ></label
                 ><input type="date" name="date2" id="date2" />
               </div>
-              <div>
+              <div class="form-field">
                 <label for="size">Unit Size/Class: </label>
                 <select name="size" id="size">
                   <option value="" selected disabled hidden></option>
@@ -254,8 +254,8 @@
                   <option value="A">30' or larger (A)</option>
                 </select>
               </div>
-              <div>
-                <label for="msg">Message: </label>
+              <div class="form-field">
+                <label for="msg" class="required">Message: </label>
                 <textarea
                   name="message"
                   id="message"
