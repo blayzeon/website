@@ -92,11 +92,21 @@ function submitEmailForm(form) {
   };
   obj.open("post", form.action, true);
   obj.setRequestHeader("Content-Type", "application/json"); // NOTICE: "application/json"
+  const EMPTY = "not provided";
+
+  // to do - format the date
+  const date1 = form.date1.value ? form.date1.value : EMPTY;
+  const date2 = form.date2.value ? form.date2.value : EMPTY;
+
   obj.send(
     JSON.stringify({
       name: form.name.value,
       email: form.email.value,
+      phone: form.phone.value ? form.phone.value : EMPTY,
+      date: `from the date ${date1} to the date ${date2}`,
+      unit: form.unit.value ? form.unit.value : EMPTY,
       message: form.message.value,
+      bot: form.username.value ? true : false,
     })
   );
   return false;

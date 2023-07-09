@@ -45,7 +45,7 @@ app.post("/send", function (request, response) {
   });
 
   var textBody = `FROM: ${request.body.name} EMAIL: ${request.body.email} MESSAGE: ${request.body.message}`;
-  var htmlBody = `<h2>Mail From Contact Form</h2><p>from: ${request.body.name} <a href="mailto:${request.body.email}">${request.body.email}</a></p><p>${request.body.message}</p>`;
+  var htmlBody = `<h2>Mail From Contact Form</h2><p>from: ${request.body.name} <a href="mailto:${request.body.email}"><${request.body.email}></a></p><ul><li>Phone: <a href="tel:${request.body.phone}">${request.body.phone}</a></li><li>Date: ${request.body.date}</li><li>Unit: ${request.body.unit}</li><li>Message: ${request.body.message}</li></ul>`;
   var mail = {
     from: USER, // sender address
     to: USER, // list of receivers (THIS COULD BE A DIFFERENT ADDRESS or ADDRESSES SEPARATED BY COMMAS)
@@ -55,17 +55,22 @@ app.post("/send", function (request, response) {
   };
 
   // send mail with defined transport object
-  transporter.sendMail(mail, function (err, info) {
-    if (err) {
-      console.log(err);
-      response.json({
-        message:
-          "message not sent: an error occured; check the server's console log",
-      });
-    } else {
-      response.json({ message: `message sent: ${info.messageId}` });
-    }
-  });
+  if (request.body.bot) {
+    // bot detection
+    console.log("it's a bot!");
+  } else {
+    transporter.sendMail(mail, function (err, info) {
+      if (err) {
+        console.log(err);
+        response.json({
+          message:
+            "message not sent: an error occured; check the server's console log",
+        });
+      } else {
+        response.json({ message: `message sent: ${info.messageId}` });
+      }
+    });
+  }
 });
 
 // set port from environment variable, or 8000
