@@ -99,6 +99,10 @@ form > div > textarea {
   padding-bottom: 1rem;
 }
 
+#footer a {
+  color: white;
+}
+
 #brand-container {
   display: flex;
   align-items: center;
