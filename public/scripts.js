@@ -109,5 +109,9 @@ function submitEmailForm(form) {
       bot: form.username.value ? true : false,
     })
   );
+
+  document.getElementById("contact-form-section").innerHTML =
+    "Message was sent successfully, thank you.";
+
   return false;
 }
