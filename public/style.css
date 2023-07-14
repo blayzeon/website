@@ -1,6 +1,6 @@
 :root {
-  --bgc: rgb(7, 10, 28);
-  --trans: rgba(14, 16, 29, 0.7);
+  --bgc: rgb(20, 20, 20);
+  --trans: rgba(20, 20, 20, 0.7);
   --font: white;
   --font_dark: black;
   --accent: rgb(0, 0, 0);
@@ -10,6 +10,10 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+#logo {
+  width: 13rem;
 }
 
 body {
@@ -51,7 +55,7 @@ button,
 
 form,
 article {
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: #fff;
   color: var(--font_dark);
 }
@@ -148,7 +152,7 @@ form > div > textarea {
 
 .trans-bg {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.2rem 1rem;
+  padding: 1rem;
   color: var(--font);
 }
 
@@ -191,6 +195,17 @@ a:hover {
   gap: 1rem;
 }
 
+.des-list {
+  margin-bottom: 1rem;
+}
+
+.des-list > * {
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0.25rem;
+}
+
 .set {
   display: flex;
   gap: 0.5rem;
@@ -212,6 +227,14 @@ a:hover {
 .active {
   border: 1px dashed black;
   width: 100%;
+}
+
+.hor-pad {
+  padding: 0 4rem;
+}
+
+.center {
+  text-align: center;
 }
 
 .sticky {
