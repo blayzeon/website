@@ -6,41 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kate's</title>
     <link type="text/css" rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      type="image/ico"
+      href="img/favicon16x16.ico"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/ico"
+      href="img/favicon32x32.ico"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/ico"
+      href="img/favicon96x96.ico"
+      sizes="96x96"
+    />
   </head>
   <body>
     <div class="container">
       <header class="sticky">
         <nav class="flex-space">
-          <span>🐟 Kate's</span>
+          <div class="center">
+            ☎️ Reservations: <a href="tel:3523721026">352-372-1026</a>
+          </div>
           <div class="set" data="info-set">
             <button id="nav-button" class="dark-button toggle-button">
               Menu ☰
             </button>
-            <ul id="nav-menu" class="display-none">
-              <li>
-                <a href="https://www.facebook.com/KFCamp" target="_blank">
-                  facebook
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.visitgainesville.com/explore/"
-                  target="_blank"
-                >
-                  visit gainesville
-                </a>
-              </li>
-            </ul>
+            <ul id="nav-menu" class="display-none"></ul>
           </div>
         </nav>
       </header>
       <main>
         <section id="brand-container">
           <div class="trans-bg">
-            <h1>Kate's Fish Camp</h1>
-            <p>
-              Located at the cross roads of SR 20, Prairie Creek and The
-              Gainesville Bike-Hawthorne trail, Kates Fish Camp makes an ideal
+            <img src="img/logo-trans-large.svg" id="logo" />
+            <p class="hor-pad">
+              Conveniently located along Prairie Creek, Newnans Lake and the
+              Gainesville-Hawthorne State Trail, Kates Fish Camp makes an ideal
               place for outdoor adventures, canoeing, boating, camping, biking,
               bird watching and more.
             </p>
@@ -49,36 +55,77 @@
         <section id="main-content">
           <article>
             <h2 id="amenitites">Amenities</h2>
-            <p>
-              Kate's Fish Camp is more than just a place to park your RV, it is
-              an exclusive campground completely surrounded by extraordinary
-              wilderness such as Paynes Prairie and Newnan's Lake, and many
-              trails to explore along the nearby Gainesville-Hawthorne State
-              Bike Trail.
-            </p>
-            <p>Our amenities include:</p>
-            <ul>
-              <li>Pull-through sites</li>
-              <li>Electricity (20, 30, and 50 amp)</li>
-              <li>Water hookups</li>
-              <li>High-speed Wi-Fi</li>
-              <li>Guest bathroom</li>
-              <li>Outdoor Shower</li>
-              <li>Outdoor grills</li>
-              <li>Picnic tables</li>
-            </ul>
+            <div class="des-list">
+              <p>All sites include:</p>
+              <ul>
+                <li>Pull-through access</li>
+                <li>Electricity (20, 30, and 50 amp)</li>
+                <li>Water hookups</li>
+              </ul>
+            </div>
+            <div class="des-list">
+              <p>Campground amenitites include:</p>
+              <ul>
+                <li>High-speed Wi-Fi</li>
+                <li>Guest bathroom</li>
+                <li>Outdoor Shower</li>
+                <li>Outdoor grills</li>
+                <li>Picnic tables</li>
+              </ul>
+            </div>
+            <div class="des-list">
+              <p>Local Amenities:</p>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.floridastateparks.org/parks-and-trails/gainesville-hawthorne-state-trail"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Direct trail access</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://myfwc.com/fishing/freshwater/sites-forecasts/nc/newnans-lake/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Direct access to Newnans Lake and Prarie Creek for fishing
+                    and boating</a
+                  >
+                </li>
+                <li>
+                  Located 15-minutes away from the heart of Gainesville,
+                  including UF and Shands,
+                  <a
+                    href="https://www.visitgainesville.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >and more.</a
+                  >
+                </li>
+              </ul>
+            </div>
             <p>
               <small>
                 🌱 <strong>Note:</strong> Due to the surrounding land's
                 recognized natural, ecological and cultural values, we do not
-                offer sewage hookups. There is a Love's Travel Stops about 15
-                minutes away that offers RV septic services.
+                offer sewage hookups. There is a
+                <a
+                  href="https://www.loves.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Love's Travel Stop</a
+                >
+                about 15 minutes away that offers RV septic services.
               </small>
             </p>
           </article>
           <article>
             <h2 id="pricing">Prices and Availabity</h2>
-            <p>RV, travel trailer, and pop-up Camping welcome</p>
+            <p>
+              Pricing is for RVs, travel trailers, and pop-up campers. We do not
+              accommodate camping for other units such as tents or vans.
+            </p>
             <ul>
               <li>
                 Class B Recreational Vehicles or Travel Trailers less than 25'
@@ -94,7 +141,7 @@
               </li>
               <li>
                 We only offer nightly rates. Campers/RVs can have up to four
-                adults; additional adults are $10 each
+                adults; additional adults are $10 per person.
               </li>
             </ul>
             <p>
@@ -159,7 +206,7 @@
                 <div class="display-none">
                   We sell homemade artisanal soap exclusively at
                   <a href="https://www.soapmakermonica.com/" target="_blank">
-                    here.
+                    soapmakermonica.com.
                   </a>
                 </div>
               </div>
@@ -178,8 +225,8 @@
                   Can I tent camp?
                 </button>
                 <div class="display-none">
-                  We only offer spots for RVs, campers, and travel trailers at
-                  this time.
+                  We only offer spots for RVs, pop-up campers, and travel
+                  trailers at this time.
                 </div>
               </div>
               <!-- 
